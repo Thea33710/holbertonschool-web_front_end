@@ -60,6 +60,10 @@ html {
     font-size: 62.5%;
 }
 
+body, a {
+    color: var(--text-color);
+}
+
 body {
     color: var(--text-color);
     font-family: var(--font-family-base);
@@ -68,20 +72,20 @@ body {
     line-height: var(--line-height-base);
 }
 
-a[href] {
+a:link {
     color: var(--text-color);
     text-decoration: none;
 }
 
-a[href]:visited {
+a:visited {
     font-style: italic;
 }
 
-a[href]:hover {
+a:hover {
     text-decoration: underline;
 }
 
-a[href]:active {
+a:active {
     background-color: var(--color-light-grey);
 }
 
@@ -142,36 +146,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-menu {
-    float: right;
+  float: right;
 }
 
-nav {
-    margin: 0;
-    padding: 0;
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav .nav-item {
+.nav .nav-item {
     font-family: var(--nav-item-font-family);
     font-weight: var(--nav-item-font-weight);
     font-size: var(--nav-item-font-size);
     letter-spacing: var(--nav-item-letter-spacing);
     display: var(--nav-item-display);
-    margin: var(--nav-item-margin);  
+    margin: var(--nav-item-margin);
 }
 
-nav .nav-link {
+.nav .nav-link {
     display: block;
     padding: 0.5rem 1rem;
 }
 
-nav .nav-link:hover {
+.nav .nav-link:hover {
     color: var(--nav-item-link-hover);
 }
 
@@ -187,7 +186,7 @@ ul.row {
     clear: both;
 }
 
-[class^="col-"] {
+[class*="col-"] {
     float: left;
     padding: 0.5rem;
 }
@@ -224,6 +223,6 @@ ul.row {
     display: block;
 }
 
-.social-link svg {
+.social-link > svg {
     fill: var(--text-color);
 }
